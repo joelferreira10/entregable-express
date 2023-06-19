@@ -131,7 +131,7 @@ app.get('/products/:pid',async(req,res)=>{
         const{pid}=req.params;
         const user=await manager.getProductById(Number(pid))
         
-        if(user)res.json(product)
+        if(user)res.json(user)
         else res.status(400).json({message: 'Product not found'});
     }catch(error){
         res.status(500).json({message: error.message});
